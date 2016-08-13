@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 // App code
                 Log.e("cxz","login done");
                 LoginActivity.this.finish();
-                Intent i = new Intent(LoginActivity.this,HomeActivity.class);
+                Intent i = new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(i);
             }
 

@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
         };
 
 
-        Log.e("cxz","user:"+ Profile.getCurrentProfile().getName());
+        Log.e("cxz","ic_profile:"+ Profile.getCurrentProfile().getName());
         tvName.setText("Hello::"+Profile.getCurrentProfile().getName());
 
 
