@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightBlue"
+    tools:context=".LogInScreen">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:text="Name of app"
+        android:id="@+id/txt_name_of_app"
+        android:textColor="@color/colorTeal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_top_of_title"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/colorTeal"
+        android:id="@+id/edt_user_name"
+        android:layout_marginTop="@dimen/margin_top_of_title"
+        android:layout_below="@id/txt_name_of_app"
+        android:hint="User name"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/colorTeal"
+        android:id="@+id/edt_pass_word"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/edt_user_name"
+        android:hint="Pass Word"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorTeal"
+        android:text="Log in"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btn_log_in"
+        android:layout_below="@id/edt_pass_word"
+        android:background="@color/colorWhiteGrey"
+        android:layout_marginTop="40dp"
+        />
+</RelativeLayout>

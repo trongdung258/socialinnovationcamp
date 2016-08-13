@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#009688</color>
+    <color name="colorBackGroundCreateGame">#FF9800</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTeal">#009688</color>
+    <color name="colorOrange">#FFC107</color>
+    <color name="colorWhiteGrey">#FAFAFA</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorLightGreen100">#DCEDC8</color>
+    <color name="colorTealA100">#A7FFEB</color>
+    <color name="colorLightBlue">#E1F5FE</color>
+    <color name="colorYellow100">#FFF9C4</color>
+    <color name="colorYellow700">#FBC02D</color>
+    <color name="colorCyan200">#80DEEA</color>
+    <color name="colorCyan900">#006064</color>
+    <color name="colorLime400">#D4E157</color>
+    <color name="colorLimeA200">#F4FF81</color>
+    <color name="colorBlueGrey">#607D8B</color>
+</resources>
