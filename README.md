@@ -1,0 +1,2 @@
+# socialinnovationcamp
+Start project
