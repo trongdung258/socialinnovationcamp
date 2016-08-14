@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.yuu.socialinnovationcamp.DataBase.DiaryDataBaseHelper;
 import com.example.yuu.socialinnovationcamp.Model.Diary;
 import com.example.yuu.socialinnovationcamp.R;
+import com.gc.materialdesign.views.Button;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -21,14 +21,14 @@ import java.util.TimeZone;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InputDiaryDialogFragment extends Dialog implements View.OnClickListener {
+public class InputDiaryDialog extends Dialog implements View.OnClickListener {
     private EditText edtContent;
     private Button btnSend;
     private Button btnSave;
     private Button btnCancel;
     private DiaryDataBaseHelper diaryDataBaseHelper;
 
-    public InputDiaryDialogFragment(Context context) {
+    public InputDiaryDialog(Context context) {
         super(context);
     }
 
@@ -38,6 +38,9 @@ public class InputDiaryDialogFragment extends Dialog implements View.OnClickList
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.fragment_input_diary_dialog);
+
+        setTitle("Input diary");
+
         edtContent = (EditText) findViewById(R.id.edt_input_content);
         btnSend = (Button) findViewById(R.id.btn_send);
         btnSave = (Button) findViewById(R.id.btn_save);

@@ -7,6 +7,7 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -15,8 +16,7 @@ import android.widget.Toast;
 
 import com.example.yuu.socialinnovationcamp.R;
 import com.example.yuu.socialinnovationcamp.base.BaseActivity;
-import com.example.yuu.socialinnovationcamp.fragment.InputDiaryDialogFragment;
-import com.gc.materialdesign.views.ButtonRectangle;
+import com.example.yuu.socialinnovationcamp.fragment.InputDiaryDialog;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 import java.util.concurrent.TimeUnit;
@@ -49,7 +49,7 @@ public class ExerciseActivity extends BaseActivity implements CompoundButton.OnC
     @Bind(R.id.exercise_checkbox_level1)
     AppCompatCheckBox exercise_checkbox_level1;
     @Bind(R.id.exercise_next_bt)
-    ButtonRectangle exercise_next_bt;
+    Button exercise_next_bt;
     MyCountDownTimer myCountDownTimer;
 
     int currentTest = 0;
@@ -81,7 +81,7 @@ public class ExerciseActivity extends BaseActivity implements CompoundButton.OnC
                             goToNextTest(currentTest);
                             break;
                         case 2:
-                            InputDiaryDialogFragment dialog = new InputDiaryDialogFragment(ExerciseActivity.this);
+                            InputDiaryDialog dialog = new InputDiaryDialog(ExerciseActivity.this);
                             dialog.show();
                             break;
                     }

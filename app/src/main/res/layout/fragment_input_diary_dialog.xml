@@ -1,9 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.yuu.socialinnovationcamp.fragment.InputDiaryDialogFragment">
+    tools:context=".fragment.InputDiaryDialog">
 
     <EditText
         android:id="@+id/edt_input_content"
@@ -12,13 +12,14 @@
         android:layout_marginTop="20dp"
         android:lines="4"
         android:textColor="@color/colorTeal"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <com.gc.materialdesign.views.ButtonRectangle
@@ -45,4 +46,4 @@
             android:textAllCaps="false"
             android:textSize="10sp" />
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
