@@ -10,8 +10,13 @@ import com.example.yuu.socialinnovationcamp.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A login screen that offers login via email/password.
@@ -30,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
 
         loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email");
+        loginButton.setReadPermissions("public_profile", "email");
         // If using in a fragment
 //        loginButton.setFragment(this);
         // Other app specific specialization
@@ -40,10 +45,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 // App code
+                requestUserProfile(loginResult);
+
                 Log.e("cxz","login done");
                 LoginActivity.this.finish();
                 Intent i = new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(i);
+
             }
 
             @Override
@@ -58,6 +66,29 @@ public class LoginActivity extends AppCompatActivity {
                 Log.e("cxz","error:"+exception.toString());
             }
         });
+    }
+
+    public void requestUserProfile(LoginResult loginResult) {
+        GraphRequest.newMeRequest(
+                loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject me, GraphResponse response) {
+                        if (response.getError() != null) {
+                            // handle error
+                        } else {
+                            try {
+                                String email = response.getJSONObject().get("email").toString();
+                                Log.e("Result", email);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            String id = me.optString("id");
+                            // send email and id to your web server
+                            Log.e("Result1", response.getRawResponse());
+                            Log.e("Result", me.toString());
+                        }
+                    }
+                }).executeAsync();
     }
 
     @Override

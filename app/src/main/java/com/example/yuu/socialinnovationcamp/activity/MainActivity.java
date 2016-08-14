@@ -8,13 +8,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.yuu.socialinnovationcamp.Adapter.BaseTabAdapter;
 import com.example.yuu.socialinnovationcamp.R;
 import com.example.yuu.socialinnovationcamp.base.BaseActivityToolbar;
-import com.example.yuu.socialinnovationcamp.customview.BaseTabAdapter;
 import com.example.yuu.socialinnovationcamp.customview.SlidingTabLayout;
 import com.example.yuu.socialinnovationcamp.fragment.HomeFragment;
 import com.example.yuu.socialinnovationcamp.fragment.ProfileFragment;
 import com.example.yuu.socialinnovationcamp.fragment.SelfHelpFragment;
+import com.example.yuu.socialinnovationcamp.fragment.SurveyFragment;
 import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 
@@ -23,6 +24,8 @@ public class MainActivity extends BaseActivityToolbar {
     public HomeFragment homeFragment;
     public ProfileFragment profileFragment;
     public SelfHelpFragment selfHelpFragment;
+    public SurveyFragment surveyFragment;
+
     private BaseTabAdapter mAdapter;
     private ViewPager mViewPager;
 
@@ -47,10 +50,26 @@ public class MainActivity extends BaseActivityToolbar {
         homeFragment = new HomeFragment();
         profileFragment = new ProfileFragment();
         selfHelpFragment = new SelfHelpFragment();
+        surveyFragment = new SurveyFragment();
 
         mAdapter = new BaseTabAdapter(this);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mViewPager.setAdapter(mAdapter);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                setTitle(mAdapter.getItemTitle(position));
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         initViews(MENU_TYPE.TAB_IMAGE);
     }

@@ -1,4 +1,4 @@
-package com.example.yuu.socialinnovationcamp.fragment;
+package com.example.yuu.socialinnovationcamp.dialog;
 
 
 import android.app.Dialog;
@@ -79,9 +79,9 @@ public class InputDiaryDialog extends Dialog implements View.OnClickListener {
         Date currentLocalTime = cal.getTime();
         DateFormat date = new DateFormat();
         cal.setTimeZone(TimeZone.getTimeZone("GMT+7:00"));
-        String curentTime = (String) date.format("dd/MM/yyyy",currentLocalTime);
-        Log.d("Diary","Time "+ curentTime + " Content "+ content);
-        diaryDataBaseHelper.addDiary(new Diary(content,curentTime));
+        String curentTime = (String) date.format("dd/MM/yyyy", currentLocalTime);
+        Log.d("Diary", "Time " + curentTime + " Content " + content);
+        diaryDataBaseHelper.addDiary(new Diary(content, curentTime));
         dismiss();
     }
 

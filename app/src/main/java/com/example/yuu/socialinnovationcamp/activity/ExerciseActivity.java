@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.example.yuu.socialinnovationcamp.R;
 import com.example.yuu.socialinnovationcamp.base.BaseActivity;
-import com.example.yuu.socialinnovationcamp.fragment.InputDiaryDialog;
+import com.example.yuu.socialinnovationcamp.dialog.InputDiaryDialog;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 import java.util.concurrent.TimeUnit;

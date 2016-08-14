@@ -1,4 +1,4 @@
-package com.example.yuu.socialinnovationcamp.customview;
+package com.example.yuu.socialinnovationcamp.Adapter;
 
 import android.database.DataSetObserver;
 import android.support.v4.app.Fragment;
@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.yuu.socialinnovationcamp.R;
 import com.example.yuu.socialinnovationcamp.activity.MainActivity;
+import com.example.yuu.socialinnovationcamp.customview.SlidingTabLayout;
 import com.example.yuu.socialinnovationcamp.fragment.HomeFragment;
 
 public class BaseTabAdapter extends FragmentPagerAdapter implements SlidingTabLayout.TabIconProvider {
@@ -30,6 +31,10 @@ public class BaseTabAdapter extends FragmentPagerAdapter implements SlidingTabLa
         iconTxt = activity.getResources().getStringArray(R.array.sliding_tab_items);
     }
 
+    public String getItemTitle(int position) {
+        return iconTxt[position];
+    }
+
     @Override
     public void registerDataSetObserver(DataSetObserver observer) {
         super.registerDataSetObserver(observer);
@@ -44,6 +49,8 @@ public class BaseTabAdapter extends FragmentPagerAdapter implements SlidingTabLa
                 return mainActivity.selfHelpFragment;
             case 2:
                 return mainActivity.homeFragment;
+            case 3:
+                return mainActivity.surveyFragment;
         }
         return new HomeFragment();
     }

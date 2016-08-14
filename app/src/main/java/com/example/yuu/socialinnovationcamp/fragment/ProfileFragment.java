@@ -1,12 +1,12 @@
 package com.example.yuu.socialinnovationcamp.fragment;
 
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +17,8 @@ import com.example.yuu.socialinnovationcamp.Adapter.ListDiaryAdapter;
 import com.example.yuu.socialinnovationcamp.DataBase.DiaryDataBaseHelper;
 import com.example.yuu.socialinnovationcamp.Model.Diary;
 import com.example.yuu.socialinnovationcamp.R;
+import com.facebook.Profile;
+import com.squareup.picasso.Picasso;
 
 import java.util.Vector;
 
@@ -59,7 +61,7 @@ public class ProfileFragment extends Fragment {
 
     private void initWigget(View view)
     {
-        imgAvatar = (ImageView)view.findViewById(R.id.img_avatar);
+        imgAvatar = (ImageView) view.findViewById(R.id.img_avatar);
         txtName = (TextView)view.findViewById(R.id.txt_name);
         txtBirthday = (TextView)view.findViewById(R.id.txt_birthday);
         txtAddress = (TextView)view.findViewById(R.id.txt_dress);
@@ -67,7 +69,19 @@ public class ProfileFragment extends Fragment {
         txtOcupation = (TextView)view.findViewById(R.id.txt_ocupation);
         listDairy = (RecyclerView)view.findViewById(R.id.list_diary);
         fragmentManager = this.getFragmentManager();
+
+        Uri profileImage = Profile.getCurrentProfile().getProfilePictureUri(150, 150);
+
+        Picasso.with(getContext())
+                .load(profileImage)
+                .resize(150, 150)
+                .centerCrop()
+                .into(imgAvatar);
+        String name = Profile.getCurrentProfile().getName();
+        txtName.setText(name);
+
     }
+
 
     private void loadDiary()
     {

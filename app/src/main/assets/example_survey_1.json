@@ -1,0 +1,139 @@
+{
+  "survey_properties": {
+    "intro_message": "<strong>Your feedback helps us to build a better mobile product.</strong><br><br><br>   Hello, Feedback from our clients, friends and family is how we make key decisions on what the future holds for XYZ App.<br><br>By combining data and previous feedback we have introduced many new features e.g. x, y, z.<br><br>It will take less than 2 minutes to answer the feedback quiz.",
+    "end_message": "Thank you for having the time to take our survey.",
+    "skip_intro": false
+  },
+  "questions": [
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I feel happy",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I am nervous about my career",
+      "description": "",
+      "required": "true",
+      "random_choices": "false",
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I feel like my colleges do not like me",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I feel like I am an unimportant person",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I want to avoid everyone",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I feel sad",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I feel like I wanna cry",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "Nobody cares about me",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I like to joke with every one",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "I feel like my body is inactive and tired",
+      "description": "(Select one that apply)",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hardly ever",
+        "Sometimes",
+        "Most of the time",
+        "All the time"
+      ]
+    }
+  ]
+}

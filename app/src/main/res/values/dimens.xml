@@ -9,7 +9,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="margin_top_of_title_app">50dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
-    <dimen name="size_of_avatar_in_profile_fragment">100dp</dimen>
+    <dimen name="size_of_avatar_in_profile_fragment">150dp</dimen>
     <dimen name="margin_from_to_line_in_profile">10dp</dimen>
     <dimen name="pading_in_profile_fragment">20dp</dimen>
 </resources>

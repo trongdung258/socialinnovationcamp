@@ -25,7 +25,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="welcome_self_help">Hello blank fragment</string>
+    <string name="welcome_self_help">Take an adventure \nwith our\n challenges to overcome\ndepression!</string>
 
     <string-array name="sliding_tab_items">
         <item>Profile</item>
