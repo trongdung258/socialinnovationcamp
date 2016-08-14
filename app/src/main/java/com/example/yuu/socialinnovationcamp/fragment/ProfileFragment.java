@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,20 +71,20 @@ public class ProfileFragment extends Fragment {
 
     private void loadDiary()
     {
-        diaryDataBaseHelper = new DiaryDataBaseHelper(getActivity(),DiaryDataBaseHelper.DB_NAME,null,
+        diaryDataBaseHelper = new DiaryDataBaseHelper(this.getContext(),DiaryDataBaseHelper.DB_NAME,null,
                 DiaryDataBaseHelper.DATABASE_VERSION);
-        final Vector<Diary> diaries = diaryDataBaseHelper.getAllDiary();
-        adapter = new ListDiaryAdapter(diaries,getActivity());
-        LinearLayoutManager horizontal = new LinearLayoutManager(getActivity());
-        horizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
-        listDairy.setLayoutManager(horizontal);
-        listDairy.setAdapter(adapter);
-        adapter.setOnItemClickListener(new ListDiaryAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClickListener(View view, int position) {
-                DiaryDialogFragment diary = DiaryDialogFragment.create(diaries.get(position).getDateTime());
-                diary.show(fragmentManager,"");
-            }
-        });
+            final Vector<Diary> diaries = diaryDataBaseHelper.getAllDiary();
+            adapter = new ListDiaryAdapter(diaries,getActivity());
+            LinearLayoutManager horizontal = new LinearLayoutManager(getActivity());
+            horizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
+            listDairy.setLayoutManager(horizontal);
+            listDairy.setAdapter(adapter);
+            adapter.setOnItemClickListener(new ListDiaryAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClickListener(View view, int position) {
+                    DiaryDialogFragment diary = DiaryDialogFragment.create(diaries.get(position).getDateTime());
+                    diary.show(fragmentManager,"");
+                }
+            });
     }
 }

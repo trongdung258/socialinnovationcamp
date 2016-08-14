@@ -28,23 +28,20 @@ public class DiaryDataBaseHelper extends SQLiteOpenHelper {
         super(context, name, factory, version);
     }
 
-    public DiaryDataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler) {
-        super(context, name, factory, version, errorHandler);
-    }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String queryCreatable = "CREATE  TABLE 'note' "
+        String queryCreatable = "CREATE  TABLE 'diary' "
                 + "('id' INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL ,"
                 + " 'time' TEXT,"
                 + " 'content' TEXT)";
         db.execSQL(queryCreatable);
-        String queryCreatable1 = "CREATE  TABLE 'diary' "
+        String queryCreatable1 = "CREATE  TABLE 'mood' "
                 + "('id' INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL ,"
                 + " 'time' TEXT,"
                 + " 'mood' TEXT)";
         db.execSQL(queryCreatable1);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
@@ -57,19 +54,20 @@ public class DiaryDataBaseHelper extends SQLiteOpenHelper {
         contentValues.put(KEY_CONTENT, diary.getContent());
         db.insert(TABLE_NAME, null, contentValues);
     }
-    public void addMood(String time,int mood)
-    {
+
+    public void addMood(String time, int mood) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_TIME, time);
         contentValues.put(KEY_MOOD, mood);
-        db.insert(TABLE_NAME, null, contentValues);
+        db.insert("mood", null, contentValues);
     }
+
     public Vector<Diary> getAllDiary() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String sql = "SELECT time,content FROM note";
-        Cursor cursor = db.rawQuery(sql, new String[0]);
         Vector<Diary> arrayList = new Vector<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT time,content FROM diary";
+        Cursor cursor = db.rawQuery(sql, new String[0]);
         while (cursor.moveToNext()) {
             String time = cursor.getString(0);
             String content = cursor.getString(1);
@@ -79,20 +77,21 @@ public class DiaryDataBaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return arrayList;
     }
-    public String contentDiary(String time)
-    {
+
+    public String contentDiary(String time) {
         String content = "";
         SQLiteDatabase db = this.getReadableDatabase();
-        String sql = "SELECT content FROM note where time ="+time;
+        String sql = "SELECT content FROM diary where time =" + time;
         Cursor cursor = db.rawQuery(sql, new String[0]);
         while (cursor.moveToNext()) {
-             content = cursor.getString(0);
+            content = cursor.getString(0);
         }
         cursor.close();
         return content;
     }
+
     public void deleteDiary(String time) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME,"time = "+ time,null);
+        db.delete(TABLE_NAME, "time = " + time, null);
     }
 }

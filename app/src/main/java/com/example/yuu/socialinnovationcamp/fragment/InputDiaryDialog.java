@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -48,7 +49,7 @@ public class InputDiaryDialog extends Dialog implements View.OnClickListener {
         btnSend.setOnClickListener(this);
         btnSave.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
-        diaryDataBaseHelper = new DiaryDataBaseHelper(getOwnerActivity(), DiaryDataBaseHelper.DB_NAME,
+        diaryDataBaseHelper = new DiaryDataBaseHelper(this.getContext(), DiaryDataBaseHelper.DB_NAME,
                 null, DiaryDataBaseHelper.DATABASE_VERSION);
     }
 
@@ -79,6 +80,7 @@ public class InputDiaryDialog extends Dialog implements View.OnClickListener {
         DateFormat date = new DateFormat();
         cal.setTimeZone(TimeZone.getTimeZone("GMT+7:00"));
         String curentTime = (String) date.format("dd/MM/yyyy",currentLocalTime);
+        Log.d("Diary","Time "+ curentTime + " Content "+ content);
         diaryDataBaseHelper.addDiary(new Diary(content,curentTime));
         dismiss();
     }
