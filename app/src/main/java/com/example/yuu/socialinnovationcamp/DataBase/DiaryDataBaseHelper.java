@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.yuu.socialinnovationcamp.Model.Diary;
 
-import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -35,7 +34,7 @@ public class DiaryDataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String queryCreatable = "CREATE  TABLE 'diary' "
+        String queryCreatable = "CREATE  TABLE 'note' "
                 + "('id' INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL ,"
                 + " 'time' TEXT,"
                 + " 'content' TEXT)";
@@ -68,13 +67,13 @@ public class DiaryDataBaseHelper extends SQLiteOpenHelper {
     }
     public Vector<Diary> getAllDiary() {
         SQLiteDatabase db = this.getReadableDatabase();
-        String sql = "SELECT title,content FROM note";
+        String sql = "SELECT time,content FROM note";
         Cursor cursor = db.rawQuery(sql, new String[0]);
         Vector<Diary> arrayList = new Vector<>();
         while (cursor.moveToNext()) {
-            String title = cursor.getString(0);
+            String time = cursor.getString(0);
             String content = cursor.getString(1);
-            Diary diary = new Diary(title, content);
+            Diary diary = new Diary(content, time);
             arrayList.add(diary);
         }
         cursor.close();

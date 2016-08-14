@@ -25,13 +25,13 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="string_title_input_dialog_fragment">Hãy viết đôi điều về cảm nhận của bản thân bạn lúc này !</string>
+    <string name="welcome_self_help">Hello blank fragment</string>
 
     <string-array name="sliding_tab_items">
-        <item>Category</item>
-        <item>Home</item>
-        <item>Applications</item>
-        <item>Games</item>
+        <item>Profile</item>
+        <item>Self Help</item>
+        <item>Chat</item>
+        <item>Survey</item>
+        <item>Contacts</item>
     </string-array>
 </resources>

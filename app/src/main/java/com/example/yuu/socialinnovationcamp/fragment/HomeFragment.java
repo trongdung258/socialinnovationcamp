@@ -1,4 +1,4 @@
-package com.example.yuu.socialinnovationcamp;
+package com.example.yuu.socialinnovationcamp.fragment;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.yuu.socialinnovationcamp.R;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.Profile;
@@ -20,11 +21,15 @@ import com.facebook.Profile;
  * Created by huylv on 13-Aug-16.
  */
 public class HomeFragment extends Fragment {
-    private AccessTokenTracker accessTokenTracker;
-    private AccessToken accessToken;
-
+    private static final String EXTRA_PROTOCOL_VERSION = "com.facebook.orca.extra.PROTOCOL_VERSION";
+    private static final String EXTRA_APP_ID = "com.facebook.orca.extra.APPLICATION_ID";
+    private static final int PROTOCOL_VERSION = 20150314;
+    //    private static final String YOUR_APP_ID = this.getResources().getString(R.string.facebook_app_id);
+    private static final int SHARE_TO_MESSENGER_REQUEST_CODE = 1;
     Button fb_messenger;
     TextView tvName;
+    private AccessTokenTracker accessTokenTracker;
+    private AccessToken accessToken;
 
     @Nullable
     @Override
@@ -73,10 +78,4 @@ public class HomeFragment extends Fragment {
 
         return v;
     }
-
-    private static final String EXTRA_PROTOCOL_VERSION = "com.facebook.orca.extra.PROTOCOL_VERSION";
-    private static final String EXTRA_APP_ID = "com.facebook.orca.extra.APPLICATION_ID";
-    private static final int PROTOCOL_VERSION = 20150314;
-//    private static final String YOUR_APP_ID = this.getResources().getString(R.string.facebook_app_id);
-    private static final int SHARE_TO_MESSENGER_REQUEST_CODE = 1;
 }

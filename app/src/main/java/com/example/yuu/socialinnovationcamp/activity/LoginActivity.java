@@ -1,4 +1,4 @@
-package com.example.yuu.socialinnovationcamp;
+package com.example.yuu.socialinnovationcamp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.example.yuu.socialinnovationcamp.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;

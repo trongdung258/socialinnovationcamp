@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,45 +6,43 @@
     tools:context="com.example.yuu.socialinnovationcamp.fragment.InputDiaryDialogFragment">
 
     <EditText
+        android:id="@+id/edt_input_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:lines="4"
         android:textColor="@color/colorTeal"
-        android:textSize="14sp"
-        android:id="@+id/edt_input_content"/>
+        android:textSize="14sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="40dp">
-        <Button
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btn_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTeal"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="Send to professor"
             android:textAllCaps="false"
-            android:background="@drawable/btn_blank"
-            android:text="Gửi tới chuyên gia"
-            android:id="@+id/btn_send"/>
-        <Button
+            android:textSize="10sp" />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTeal"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="Save"
             android:textAllCaps="false"
-            android:text="Lưu lại"
-            android:background="@drawable/btn_blank"
-            android:id="@+id/btn_save"/>
-        <Button
+            android:textSize="10sp" />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTeal"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="Cancel"
             android:textAllCaps="false"
-            android:background="@drawable/btn_blank"
-            android:text="Hủy bỏ"
-            android:id="@+id/btn_cancel"/>
+            android:textSize="10sp" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
