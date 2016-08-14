@@ -170,30 +170,56 @@
                     android:layout_marginBottom="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/layout_in_profile"></RelativeLayout>
+                    android:background="@drawable/layout_in_profile">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:src="@drawable/profit"
+                        android:scaleType="fitXY"
+                        android:padding="20dp"/>
+                </RelativeLayout>
 
-                <RelativeLayout
+                <LinearLayout
                     android:id="@+id/layout_diary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/layout_performance"
                     android:layout_marginBottom="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/list_diary"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"></android.support.v7.widget.RecyclerView>
-                </RelativeLayout>
+                    <TextView
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#03A9F4"
+                        android:text="@string/note_for_button_send_profile"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#03A9F4"
+                        android:textSize="22sp"
+                        android:text="Gửi"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_blank"
+                        android:layout_marginTop="30dp"/>
+                </LinearLayout>
 
 
             </RelativeLayout>
 
             <com.facebook.login.widget.LoginButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp">
             </com.facebook.login.widget.LoginButton>
         </LinearLayout>
     </ScrollView>

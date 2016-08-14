@@ -85,20 +85,31 @@ public class ProfileFragment extends Fragment {
 
     private void loadDiary()
     {
-        diaryDataBaseHelper = new DiaryDataBaseHelper(this.getContext(),DiaryDataBaseHelper.DB_NAME,null,
-                DiaryDataBaseHelper.DATABASE_VERSION);
-            final Vector<Diary> diaries = diaryDataBaseHelper.getAllDiary();
+//        diaryDataBaseHelper = new DiaryDataBaseHelper(this.getContext(),DiaryDataBaseHelper.DB_NAME,null,
+//                DiaryDataBaseHelper.DATABASE_VERSION);
+//            final Vector<Diary> diaries = diaryDataBaseHelper.getAllDiary();
+            Vector<Diary> diaries = new Vector<>();
+            diaries.add(new Diary("Adddd","2/8/2016"));
+            diaries.add(new Diary("Addd2","3/8/2016"));
+            diaries.add(new Diary("aaaaaa","4/8/2016"));
+            diaries.add(new Diary("Adddd","5/8/2016"));
+            diaries.add(new Diary("Addd2","6/8/2016"));
+            diaries.add(new Diary("aaaaaa","7/8/2016"));
+            diaries.add(new Diary("Adddd","8/8/2016"));
+            diaries.add(new Diary("Addd2","9/8/2016"));
+            diaries.add(new Diary("aaaaaa","10/8/2016"));
+
             adapter = new ListDiaryAdapter(diaries,getActivity());
             LinearLayoutManager horizontal = new LinearLayoutManager(getActivity());
             horizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
             listDairy.setLayoutManager(horizontal);
             listDairy.setAdapter(adapter);
-            adapter.setOnItemClickListener(new ListDiaryAdapter.OnItemClickListener() {
-                @Override
-                public void onItemClickListener(View view, int position) {
-                    DiaryDialogFragment diary = DiaryDialogFragment.create(diaries.get(position).getDateTime());
-                    diary.show(fragmentManager,"");
-                }
-            });
+//            adapter.setOnItemClickListener(new ListDiaryAdapter.OnItemClickListener() {
+//                @Override
+//                public void onItemClickListener(View view, int position) {
+//                    DiaryDialogFragment diary = DiaryDialogFragment.create(diaries.get(position).getDateTime());
+//                    diary.show(fragmentManager,"");
+//                }
+//            });
     }
 }
