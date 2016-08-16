@@ -2,16 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/background_survey"
     tools:context="com.example.yuu.socialinnovationcamp.fragment.SurveyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_survey_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:text="Lets try our survey"
+        android:textColor="#000000"
+        android:textSize="20sp" />
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/start_survey_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:padding="10dp"
         android:text="Start Survey"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
 </RelativeLayout>

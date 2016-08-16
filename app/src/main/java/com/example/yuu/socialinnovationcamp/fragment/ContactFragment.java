@@ -1,27 +1,14 @@
 package com.example.yuu.socialinnovationcamp.fragment;
 
 
-import android.app.Fragment;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.example.yuu.socialinnovationcamp.R;
+import com.example.yuu.socialinnovationcamp.base.BaseFragment;
 
-public class ContactFragment extends Fragment {
-
-
-    public ContactFragment() {
-        // Required empty public constructor
-    }
-
+public class ContactFragment extends BaseFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+    protected int getLayoutId() {
+        return R.layout.fragment_contact;
     }
 
 }

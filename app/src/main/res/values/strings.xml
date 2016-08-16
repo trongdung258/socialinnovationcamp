@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">socialinnovationcamp</string>
+    <string name="app_name">BigBuddy</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -30,12 +30,13 @@
     <string-array name="sliding_tab_items">
         <item>Profile</item>
         <item>Self Help</item>
-        <item>Chat</item>
+        <item>Chat with me</item>
         <item>Survey</item>
         <item>Contacts</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="note_for_button_send_profile">*Node : Bạn có thể đặt lịch hẹn với bác sỹ và gửi nhật ký, tình trạng sức khỏe tâm lý của bạn tới bác sỹ để nhận tư vấn tốt nhất.Nếu bạn muốn hãy click vào nút gửi!</string>
+    <string name="doctor_description">I\'m a caring person who has been through alot, and i\'m here to listen anything, you might...</string>
+    <string name="note_for_button_send_profile">You can book an appointment with a doctor and send the diary, your mentor help situation to get the best advices. Please click send! </string>
 </resources>

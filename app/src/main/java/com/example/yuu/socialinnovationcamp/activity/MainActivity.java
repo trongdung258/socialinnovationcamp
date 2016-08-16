@@ -12,7 +12,8 @@ import com.example.yuu.socialinnovationcamp.Adapter.BaseTabAdapter;
 import com.example.yuu.socialinnovationcamp.R;
 import com.example.yuu.socialinnovationcamp.base.BaseActivityToolbar;
 import com.example.yuu.socialinnovationcamp.customview.SlidingTabLayout;
-import com.example.yuu.socialinnovationcamp.fragment.HomeFragment;
+import com.example.yuu.socialinnovationcamp.fragment.ChatFragment;
+import com.example.yuu.socialinnovationcamp.fragment.ContactFragment;
 import com.example.yuu.socialinnovationcamp.fragment.ProfileFragment;
 import com.example.yuu.socialinnovationcamp.fragment.SelfHelpFragment;
 import com.example.yuu.socialinnovationcamp.fragment.SurveyFragment;
@@ -21,10 +22,11 @@ import com.facebook.FacebookSdk;
 
 public class MainActivity extends BaseActivityToolbar {
 
-    public HomeFragment homeFragment;
+    public ChatFragment homeFragment;
     public ProfileFragment profileFragment;
     public SelfHelpFragment selfHelpFragment;
     public SurveyFragment surveyFragment;
+    public ContactFragment contactFragment;
 
     private BaseTabAdapter mAdapter;
     private ViewPager mViewPager;
@@ -47,10 +49,11 @@ public class MainActivity extends BaseActivityToolbar {
             }
         });
 
-        homeFragment = new HomeFragment();
+        homeFragment = new ChatFragment();
         profileFragment = new ProfileFragment();
         selfHelpFragment = new SelfHelpFragment();
         surveyFragment = new SurveyFragment();
+        contactFragment = new ContactFragment();
 
         mAdapter = new BaseTabAdapter(this);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);

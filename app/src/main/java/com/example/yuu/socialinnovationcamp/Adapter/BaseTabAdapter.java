@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.yuu.socialinnovationcamp.R;
 import com.example.yuu.socialinnovationcamp.activity.MainActivity;
 import com.example.yuu.socialinnovationcamp.customview.SlidingTabLayout;
-import com.example.yuu.socialinnovationcamp.fragment.HomeFragment;
+import com.example.yuu.socialinnovationcamp.fragment.ChatFragment;
 
 public class BaseTabAdapter extends FragmentPagerAdapter implements SlidingTabLayout.TabIconProvider {
     private static final String TAG = BaseTabAdapter.class.getSimpleName();
@@ -51,8 +51,10 @@ public class BaseTabAdapter extends FragmentPagerAdapter implements SlidingTabLa
                 return mainActivity.homeFragment;
             case 3:
                 return mainActivity.surveyFragment;
+            case 4:
+                return mainActivity.contactFragment;
         }
-        return new HomeFragment();
+        return new ChatFragment();
     }
 
     @Override

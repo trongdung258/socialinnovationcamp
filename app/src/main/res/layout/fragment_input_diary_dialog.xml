@@ -1,9 +1,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".dialog.InputDiaryDialog">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write down in your diary:"
+        android:textColor="#000000"
+        android:textSize="25sp" />
 
     <EditText
         android:id="@+id/edt_input_content"
@@ -21,14 +30,6 @@
         android:layout_alignParentStart="true"
         android:gravity="center"
         android:orientation="horizontal">
-
-        <com.gc.materialdesign.views.ButtonRectangle
-            android:id="@+id/btn_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send to professor"
-            android:textAllCaps="false"
-            android:textSize="10sp" />
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/btn_save"

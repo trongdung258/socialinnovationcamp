@@ -1,6 +1,7 @@
 package com.example.yuu.socialinnovationcamp.activity;
 
 import android.annotation.TargetApi;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -28,7 +29,6 @@ import butterknife.Bind;
  */
 public class ExerciseActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener {
 
-    private final long startTime = 3000;
     private final long interval = 1000;
     @Bind(R.id.exercise_timer_tv)
     TextView exercise_timer_tv;
@@ -51,8 +51,9 @@ public class ExerciseActivity extends BaseActivity implements CompoundButton.OnC
     @Bind(R.id.exercise_next_bt)
     Button exercise_next_bt;
     MyCountDownTimer myCountDownTimer;
-
     int currentTest = 0;
+    private long startTime = 6000;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,6 +94,11 @@ public class ExerciseActivity extends BaseActivity implements CompoundButton.OnC
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void goToNextTest(int stat) {
 
+        if (stat == 2) {
+            startTime = 10000;
+            mediaPlayer = MediaPlayer.create(this, R.raw.relax_music);
+            mediaPlayer.start();
+        }
 
         self_help_exercise_rl.setVisibility(View.VISIBLE);
         self_help_check_point_rl.setVisibility(View.GONE);
@@ -107,15 +113,15 @@ public class ExerciseActivity extends BaseActivity implements CompoundButton.OnC
         switch (stat) {
             case 0:
                 exercise_icon_iv.setImageDrawable(getDrawable(R.drawable.ic_person_walking));
-                exercise_description_tv.setText("Ban hay dung len ngoi xuong 10 lan");
+                exercise_description_tv.setText("Stand up and sit down 10 times");
                 break;
             case 1:
                 exercise_icon_iv.setImageDrawable(getDrawable(R.drawable.ic_lemonade));
-                exercise_description_tv.setText("Ban hay di uong 1 coc nuoc");
+                exercise_description_tv.setText("Drink a glass of water");
                 break;
             case 2:
                 exercise_icon_iv.setImageDrawable(getDrawable(R.drawable.ic_listen_music));
-                exercise_description_tv.setText("Hay nghe het ban nhac nay");
+                exercise_description_tv.setText("Listen to this song");
                 break;
         }
     }
@@ -129,7 +135,10 @@ public class ExerciseActivity extends BaseActivity implements CompoundButton.OnC
 
         self_help_exercise_rl.setVisibility(View.GONE);
         self_help_check_point_rl.setVisibility(View.VISIBLE);
-        if (currentTest == 2) exercise_next_bt.setText("Finish");
+        if (currentTest == 2) {
+            exercise_next_bt.setText("Finish");
+            if (mediaPlayer.isPlaying()) mediaPlayer.stop();
+        }
     }
 
     @Override
@@ -156,10 +165,6 @@ public class ExerciseActivity extends BaseActivity implements CompoundButton.OnC
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(this, "You can not go back at this stage!", Toast.LENGTH_SHORT).show();
-    }
 
     public class MyCountDownTimer extends CountDownTimer {
         private static final String FORMAT = "%02d:%02d";

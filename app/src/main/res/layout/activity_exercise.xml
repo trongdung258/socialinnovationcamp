@@ -32,7 +32,7 @@
             android:layout_height="300dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            app:cpb_background_progressbar_color="#4863fa"
+            app:cpb_background_progressbar_color="#ffffff"
             app:cpb_background_progressbar_width="5dp"
             app:cpb_progress="100"
             app:cpb_progressbar_color="#3128ce"
@@ -70,7 +70,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/self_help_timer_pb"
             android:gravity="center"
-            android:text="Ban hay dung len \nngoi xuong 10 lan"
+            android:text="Stand up and sit down 10 times"
             android:textColor="@android:color/white"
             android:textSize="40sp"
             android:textStyle="bold" />

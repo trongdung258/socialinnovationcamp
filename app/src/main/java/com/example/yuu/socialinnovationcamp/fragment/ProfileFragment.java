@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.yuu.socialinnovationcamp.Adapter.ListDiaryAdapter;
@@ -18,6 +17,7 @@ import com.example.yuu.socialinnovationcamp.DataBase.DiaryDataBaseHelper;
 import com.example.yuu.socialinnovationcamp.Model.Diary;
 import com.example.yuu.socialinnovationcamp.R;
 import com.facebook.Profile;
+import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.Vector;
@@ -26,13 +26,9 @@ import java.util.Vector;
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment extends Fragment {
-    
-    private ImageView imgAvatar;
+
+    private CircularImageView imgAvatar;
     private TextView txtName;
-    private TextView txtBirthday;
-    private TextView txtAddress;
-    private TextView txtPhoneNumber;
-    private TextView txtOcupation;
     private RecyclerView listDairy;
     private ListDiaryAdapter adapter;
     private DiaryDataBaseHelper diaryDataBaseHelper;
@@ -61,12 +57,8 @@ public class ProfileFragment extends Fragment {
 
     private void initWigget(View view)
     {
-        imgAvatar = (ImageView) view.findViewById(R.id.img_avatar);
+        imgAvatar = (CircularImageView) view.findViewById(R.id.img_avatar);
         txtName = (TextView)view.findViewById(R.id.txt_name);
-        txtBirthday = (TextView)view.findViewById(R.id.txt_birthday);
-        txtAddress = (TextView)view.findViewById(R.id.txt_dress);
-        txtPhoneNumber = (TextView)view.findViewById(R.id.txt_phone_number);
-        txtOcupation = (TextView)view.findViewById(R.id.txt_ocupation);
         listDairy = (RecyclerView)view.findViewById(R.id.list_diary);
         fragmentManager = this.getFragmentManager();
 
